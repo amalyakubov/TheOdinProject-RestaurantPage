@@ -44,12 +44,17 @@ html, body {
     margin-left: 40px;
 }
 
+#story-container p {
+    line-height: 1.35;
+}
+
 #photo-container {
     width: 60%;
     height: auto;
 }
 
 #photo-container img {
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
