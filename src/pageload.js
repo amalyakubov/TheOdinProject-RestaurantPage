@@ -14,6 +14,10 @@
     let photoContainer = document.createElement('div');
     photoContainer.id = 'photo-container';
     photoContainer.appendChild(firstPhoto);
+    let overlay = document.createElement('p');
+    overlay.innerHTML = '4.32$';
+    overlay.id = 'overlay';
+    photoContainer.appendChild(overlay);
     div.appendChild(photoContainer);
     content.appendChild(div);
 
