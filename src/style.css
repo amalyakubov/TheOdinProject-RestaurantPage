@@ -77,4 +77,12 @@ hr {
     margin-top: 40px;
     width: 100%;
     border: 1.5px solid black;
+
+
+}
+
+h3 {
+    margin: 20px;
+    font-weight: 700;
+    font-size: 6.5vh;
 }

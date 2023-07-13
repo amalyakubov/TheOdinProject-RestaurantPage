@@ -35,10 +35,13 @@
 
     let menu =  document.createElement('div');
     menu.id = 'menu-container';
+    let menuTitle = document.createElement('h3');
+    menuTitle.innerHTML = 'Special Chicken Menu';
     let list = document.createElement('ol');
     let menuItemOne = document.createElement('li');
     menuItemOne.innerHTML = 'Hi';
     list.appendChild(menuItemOne);
+    menu.appendChild(menuTitle);
     menu.appendChild(list);
     content.appendChild(menu);
 }
