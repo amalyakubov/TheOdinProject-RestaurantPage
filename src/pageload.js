@@ -11,6 +11,7 @@
     div.id = 'products-display';
     let firstPhoto = new Image();
     firstPhoto.src = photo1;
+    firstPhoto.alt = 'Crispy, delicious chicken in the paper containers'
     let photoContainer = document.createElement('div');
     photoContainer.id = 'photo-container';
     photoContainer.appendChild(firstPhoto);
@@ -24,7 +25,7 @@
     let newDiv = document.createElement('div');
     newDiv.id = 'story-container';
     let h = document.createElement('h3');
-    h.innerHTML = '34 years of finest chicken'
+    h.innerHTML = '34 years of the finest chicken'
     newDiv.appendChild(h);
     let p = document.createElement('p');
     p.innerHTML = 'Los Pollos Hermanos is a brain child of a brilliant Chillian-Mexican entrepreneur who wanted to cook only the finest chicken. Los Pollos Hermanos was initially only a small restaurant on the outskirts of Alberqueque. However not long after the intial opening, the restaurant begun attracting crowd of Albuquqerque residents. Even the inhabintants of towns outside the Albuquerque came to visit the renowned restuad chicekn restaurant in the ALQ. Since then, the restaurant has expanded to many different locations, including other states; Arizona, Colorado, Nevada, Utah.. everyone can now try the finest chicken! But the restaurant has not forgotten its roots. With love and care of our LPH employees and its cunnning founder, the LPH has stayed true to its values. Serving only the finest and tastiest chicken in the entirety of the South.';
@@ -35,13 +36,42 @@
 
     let menu =  document.createElement('div');
     menu.id = 'menu-container';
+    content.appendChild(menu);
     let menuTitle = document.createElement('h3');
     menuTitle.innerHTML = 'Special Chicken Menu';
-    let list = document.createElement('ol');
-    let menuItemOne = document.createElement('li');
-    menuItemOne.innerHTML = 'Hi';
-    list.appendChild(menuItemOne);
     menu.appendChild(menuTitle);
+
+    let list = document.createElement('div');
+    list.id = 'menu-list';
+    let listFirstPart = document.createElement('div');
+    listFirstPart.id = 'first-list';
+    let listSecondPart = document.createElement('div');
+    listSecondPart.id = 'second-list';
+    list.appendChild(listFirstPart);
+    list.appendChild(listSecondPart);
     menu.appendChild(list);
-    content.appendChild(menu);
+    createMenuItemInsideAFirstList('1. Crisp Chicken Burger - 7.4$');
+    createMenuItemInsideAFirstList('2. Crispy Classic Chicken Wings - 5.4$');
+    createMenuItemInsideAFirstList('3. "The Lonely Star" Burger - 9.4$');
+    createMenuItemInsideAFirstList('4. Smoking hot chikcen breasts- 5.4$');
+    createMenuItemInSecondList('5. Standart Texas Burger - 8.5$');
+    createMenuItemInSecondList('6. Sweet Chicken Thigs - 6.4$');
+    createMenuItemInSecondList('7. Vacation Set - 14.4$');
+    createMenuItemInSecondList('8. The Continental Burger - 14.5$');
+}
+
+function createMenuItemInsideAFirstList(text) {
+    let list = document.getElementById('first-list');
+    let menuItem = document.createElement('p');
+    menuItem.innerHTML = text;
+    console.log(list);
+    list.appendChild(menuItem);
+}
+
+function createMenuItemInSecondList(text) {
+    let list = document.getElementById('second-list');
+    let menuItem = document.createElement('p');
+    menuItem.innerHTML = text;
+    console.log(list);
+    list.appendChild(menuItem);
 }
