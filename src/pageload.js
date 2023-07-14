@@ -58,13 +58,36 @@
     createMenuItemInSecondList('6. Sweet Chicken Thigs - 6.4$');
     createMenuItemInSecondList('7. Vacation Set - 14.4$');
     createMenuItemInSecondList('8. The Continental Burger - 14.5$');
+
+    let footer = document.createElement('div');
+    footer.id = 'footer';
+    let footerElementsContanier = document.createElement('div');
+    footerElementsContanier.id = 'footer-elements-container';
+    let footerUpperPart = document.createElement('div');
+    let footerLowerPart= document.createElement('div');
+    footerUpperPart.id = 'upper-part';
+    footerLowerPart.id = 'lower-part';
+    footerElementsContanier.appendChild(footerUpperPart);
+    footerElementsContanier.appendChild(footerLowerPart);
+    let contact = document.createElement('div');
+    let email = document.createElement('p');
+    email.innerHTML = 'lospollos@hermanos.com';
+    let phone = document.createElement('p');
+    phone.innerHTML = '+1 (505) 146-0195'
+    let thanks = document.createElement('a');
+    thanks.innerHTML = 'Photo by <a href="https://unsplash.com/es/@tigerrulezzz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brian Chan</a> on <a href="https://unsplash.com/photos/NbXjZomyNEM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+    footerLowerPart.appendChild(thanks);
+    contact.appendChild(phone);
+    contact.appendChild(email);
+    footerUpperPart.appendChild(contact);
+    footer.appendChild(footerElementsContanier);
+    content.appendChild(footer);
 }
 
 function createMenuItemInsideAFirstList(text) {
     let list = document.getElementById('first-list');
     let menuItem = document.createElement('p');
     menuItem.innerHTML = text;
-    console.log(list);
     list.appendChild(menuItem);
 }
 
@@ -72,6 +95,5 @@ function createMenuItemInSecondList(text) {
     let list = document.getElementById('second-list');
     let menuItem = document.createElement('p');
     menuItem.innerHTML = text;
-    console.log(list);
     list.appendChild(menuItem);
 }
