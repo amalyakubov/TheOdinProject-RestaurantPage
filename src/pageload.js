@@ -6,7 +6,14 @@
  export function pageLoad(text) {
     let welcomeText = appendToDivWithText('p', text);
     appendToHeader(content.appendChild(welcomeText));
+    
+    addPhotoOverlay();
+    createStory();
+    createMenu();
+    createAppendFooter();
+}
 
+function addPhotoOverlay() {
     let div = document.createElement('div');
     div.id = 'products-display';
     let firstPhoto = new Image();
@@ -21,7 +28,10 @@
     photoContainer.appendChild(overlay);
     div.appendChild(photoContainer);
     content.appendChild(div);
+}
 
+function createStory() {
+    let div = document.getElementById('products-display');
     let newDiv = document.createElement('div');
     newDiv.id = 'story-container';
     let h = document.createElement('h3');
@@ -33,7 +43,23 @@
     let lineBreak = document.createElement('hr');
     newDiv.appendChild(lineBreak);
     div.appendChild(newDiv);
+}
 
+function createMenuItemInsideAFirstList(text) {
+    let list = document.getElementById('first-list');
+    let menuItem = document.createElement('p');
+    menuItem.innerHTML = text;
+    list.appendChild(menuItem);
+}
+
+function createMenuItemInSecondList(text) {
+    let list = document.getElementById('second-list');
+    let menuItem = document.createElement('p');
+    menuItem.innerHTML = text;
+    list.appendChild(menuItem);
+}
+
+function createMenu() {
     let menu =  document.createElement('div');
     menu.id = 'menu-container';
     content.appendChild(menu);
@@ -58,7 +84,9 @@
     createMenuItemInSecondList('6. Sweet Chicken Thigs - 6.4$');
     createMenuItemInSecondList('7. Vacation Set - 14.4$');
     createMenuItemInSecondList('8. The Continental Burger - 14.5$');
+}
 
+function createAppendFooter() {
     let footer = document.createElement('div');
     footer.id = 'footer';
     let footerElementsContanier = document.createElement('div');
@@ -82,18 +110,4 @@
     footerUpperPart.appendChild(contact);
     footer.appendChild(footerElementsContanier);
     content.appendChild(footer);
-}
-
-function createMenuItemInsideAFirstList(text) {
-    let list = document.getElementById('first-list');
-    let menuItem = document.createElement('p');
-    menuItem.innerHTML = text;
-    list.appendChild(menuItem);
-}
-
-function createMenuItemInSecondList(text) {
-    let list = document.getElementById('second-list');
-    let menuItem = document.createElement('p');
-    menuItem.innerHTML = text;
-    list.appendChild(menuItem);
 }
