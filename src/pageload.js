@@ -13,6 +13,13 @@
     createAppendFooter();
 }
 
+function addEventListeners() {
+    const HOME = document.getElementById('home');
+    const DELIVERY = document.getElementById('delivery');
+    const ABOUT = document.getElementById('about');
+
+}
+
 function displayWelcome() {
     let welcomeContainer = document.createElement('div');
     welcomeContainer.id = 'welcome-container';
@@ -26,22 +33,24 @@ function createNavigationMenu () {
     let container = document.createElement('div');
     container.id = 'navigation-container';
     content.appendChild(container);
-
     logoAppend();
 
     let home = document.createElement('div');
+    home.id = 'home';
     let homeText = document.createElement('p');
     home.appendChild(homeText);
     homeText.innerHTML = 'Home';
     container.appendChild(home);
 
-    let delivery = document.createElement('div')
+    let delivery = document.createElement('div');
+    delivery.id = 'delivery';
     let deliveryText = document.createElement('p');
     deliveryText.innerHTML = 'Delivery';
     delivery.appendChild(deliveryText);
     container.appendChild(delivery);
 
     let about = document.createElement('div');
+    about.id = 'about';
     let aboutText = document.createElement('p');
     aboutText.innerHTML = 'About';
     about.appendChild(aboutText);
