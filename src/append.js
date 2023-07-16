@@ -12,7 +12,7 @@ export function appendToDivWithText(element, text) {
 export function logoAppend() {
     let container = document.createElement('div');
     container.id = 'logo-container'
-    let header = document.getElementById('header');
+    let header = document.getElementById('navigation-container');
     let logoToAppend = new Image();
     logoToAppend.src = logo;
     container.appendChild(logoToAppend);

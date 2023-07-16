@@ -1,16 +1,52 @@
  import { appendToDivWithText } from "./append";
  import { appendToHeader } from "./append";
  import {content} from "./append";
+ import { logoAppend } from "./append";
  import photo1 from './img/photo-1.jpg'
 
- export function pageLoad(text) {
-    let welcomeText = appendToDivWithText('p', text);
-    appendToHeader(content.appendChild(welcomeText));
-    
+ export function pageLoad() {
+    createNavigationMenu();
+    displayWelcome();
     addPhotoOverlay();
     createStory();
     createMenu();
     createAppendFooter();
+}
+
+function displayWelcome() {
+    let welcomeContainer = document.createElement('div');
+    welcomeContainer.id = 'welcome-container';
+    let welcomeText = document.createElement('p');
+    welcomeText.innerHTML = 'Welcome to Los Pollos Hermanos! What would you like to eat?';
+    welcomeContainer.appendChild(welcomeText);
+    content.appendChild(welcomeContainer);
+}
+
+function createNavigationMenu () {
+    let container = document.createElement('div');
+    container.id = 'navigation-container';
+    content.appendChild(container);
+
+    logoAppend();
+
+    let home = document.createElement('div');
+    let homeText = document.createElement('p');
+    home.appendChild(homeText);
+    homeText.innerHTML = 'Home';
+    container.appendChild(home);
+
+    let delivery = document.createElement('div')
+    let deliveryText = document.createElement('p');
+    deliveryText.innerHTML = 'Delivery';
+    delivery.appendChild(deliveryText);
+    container.appendChild(delivery);
+
+    let about = document.createElement('div');
+    let aboutText = document.createElement('p');
+    aboutText.innerHTML = 'About';
+    about.appendChild(aboutText);
+    container.appendChild(about);
+
 }
 
 function addPhotoOverlay() {

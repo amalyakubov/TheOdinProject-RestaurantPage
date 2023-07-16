@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,500;0,600;0,800;1,500;1,600;1,900&display=swap');
 
+
 html, body {
     height: 100%;
     width: 100%;
@@ -13,26 +14,44 @@ html, body {
     font-family: 'Work Sans', sans-serif;
 }
 
-#header {
-    display: flex;
-    height: 110px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: 600;
-    display: flex;
-    border: 6px solid black;
+p {
+    margin: 0;
 }
 
+#navigation-container {
+    display: flex;
+    height: 100px;
+    gap: 90px;
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 30px;
+    font-size: 60px;
+    font-weight: 600;
+}
 
-#header div {
-    margin-left: 25px;
+#navigation-container div {
     display: flex;
     align-items: center;
 }
 
-#header img {
+#navigation-container img {
     height: 100px;
     width: 100px;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#welcome-container {
+    display: flex;
+    height: 100px;
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 #products-display {
@@ -155,4 +174,8 @@ ol {
     font-size: 20px;
     text-decoration: none;
     color: black;
+}
+
+#footer-elements-container {
+    justify-content: center;
 }
