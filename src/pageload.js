@@ -3,7 +3,7 @@
  import {content} from "./append";
  import { logoAppend } from "./append";
  import photo1 from './img/photo-1.jpg'
- import { addEventListeners } from "./navigate";
+ import { NAVIGATION } from "./navigate";
 
  export function pageLoad() {
     createNavigationMenu();
@@ -12,7 +12,7 @@
     createStory();
     createMenu();
     createAppendFooter();
-    addEventListeners();
+    NAVIGATION();
 
 }
 
