@@ -168,7 +168,7 @@ ol {
     margin-left: 40px;
     align-items: center;
     display: flex;
-    justify-content: left;
+    gap: 20px;
 }
 
 #lower-part a {
@@ -183,4 +183,11 @@ ol {
 
 #welcome-container.hidden, #products-display.hidden, #menu-container.hidden, #footer.hidden {
     display: none;
+}
+
+#input-container {
+    border-radius: 10px;
+    background-image: url(img/hero-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }

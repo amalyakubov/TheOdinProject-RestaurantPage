@@ -11,6 +11,7 @@
     createStory();
     createMenu();
     createAppendFooter();
+    createDeliveryDiv();
 }
 
 function displayWelcome() {
@@ -142,10 +143,19 @@ function createAppendFooter() {
     phone.innerHTML = '+1 (505) 146-0195'
     let thanks = document.createElement('a');
     thanks.innerHTML = 'Photo by <a href="https://unsplash.com/es/@tigerrulezzz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brian Chan</a> on <a href="https://unsplash.com/photos/NbXjZomyNEM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+    let thanskTwo = document.createElement('a');
+    thanskTwo.innerHTML = 'Photo by <a href="https://www.pexels.com/photo/top-view-of-food-1640772/"> Ella Olsson</a>';
     footerLowerPart.appendChild(thanks);
+    footerLowerPart.appendChild(thanskTwo)
     contact.appendChild(phone);
     contact.appendChild(email);
     footerUpperPart.appendChild(contact);
     footer.appendChild(footerElementsContanier);
     document.body.appendChild(footer);
+}
+
+function createDeliveryDiv() {
+    let div = document.createElement('div');
+    div.id = 'delivery-div';
+    content.appendChild(div);
 }

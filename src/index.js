@@ -9,6 +9,7 @@ const NAVIGATION = function() {
     const PRODUCTSCONTAINER = document.getElementById('products-display');
     const MENUCONTAINER = document.getElementById('menu-container');
     const FOOTER = document.getElementById('footer');
+    const DELIVERYDIV = document.getElementById('delivery-div');
 
     function hideContent() {
         WELCOMECONTAINER.classList.add('hidden');
@@ -22,6 +23,7 @@ const NAVIGATION = function() {
         PRODUCTSCONTAINER.classList.remove('hidden');
         MENUCONTAINER.classList.remove('hidden');
         FOOTER.classList.remove('hidden');
+        DELIVERYDIV.classList.add('hidden');
     }
     
     function addEventListeners() {
@@ -41,6 +43,7 @@ const NAVIGATION = function() {
         about.addEventListener('click', () => {
             hideContent();
         })
+
     }
     addEventListeners();
  };
