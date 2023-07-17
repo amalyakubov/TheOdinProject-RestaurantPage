@@ -3,6 +3,7 @@
  import {content} from "./append";
  import { logoAppend } from "./append";
  import photo1 from './img/photo-1.jpg'
+ import { addEventListeners } from "./navigate";
 
  export function pageLoad() {
     createNavigationMenu();
@@ -11,12 +12,7 @@
     createStory();
     createMenu();
     createAppendFooter();
-}
-
-function addEventListeners() {
-    const HOME = document.getElementById('home');
-    const DELIVERY = document.getElementById('delivery');
-    const ABOUT = document.getElementById('about');
+    addEventListeners();
 
 }
 

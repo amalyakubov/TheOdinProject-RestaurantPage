@@ -179,3 +179,7 @@ ol {
 #footer-elements-container {
     justify-content: center;
 }
+
+#welcome-container.hidden, #products-display.hidden, #menu-container.hidden {
+    display: none;
+}
