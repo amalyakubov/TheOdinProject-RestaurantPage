@@ -3,7 +3,6 @@
  import {content} from "./append";
  import { logoAppend } from "./append";
  import photo1 from './img/photo-1.jpg'
- import { NAVIGATION } from "./navigate";
 
  export function pageLoad() {
     createNavigationMenu();
@@ -12,8 +11,6 @@
     createStory();
     createMenu();
     createAppendFooter();
-    NAVIGATION();
-
 }
 
 function displayWelcome() {
@@ -150,5 +147,5 @@ function createAppendFooter() {
     contact.appendChild(email);
     footerUpperPart.appendChild(contact);
     footer.appendChild(footerElementsContanier);
-    content.appendChild(footer);
+    document.body.appendChild(footer);
 }

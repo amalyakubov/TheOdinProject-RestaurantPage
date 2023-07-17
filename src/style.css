@@ -76,6 +76,7 @@ p {
 }
 
 #photo-container {
+    justify-content: center;
     position: relative;
     width: 60%;
     height: auto;
@@ -93,7 +94,7 @@ p {
     font-size: min(15vw, 250px);
     font-weight: 700;
     position: absolute;
-    bottom: 120px;
+    bottom: 35%;
     left: 90px;
 }
 
@@ -180,6 +181,6 @@ ol {
     justify-content: center;
 }
 
-#welcome-container.hidden, #products-display.hidden, #menu-container.hidden {
+#welcome-container.hidden, #products-display.hidden, #menu-container.hidden, #footer.hidden {
     display: none;
 }
