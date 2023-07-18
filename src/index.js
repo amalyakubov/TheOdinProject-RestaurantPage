@@ -10,12 +10,15 @@ const NAVIGATION = function() {
     const MENUCONTAINER = document.getElementById('menu-container');
     const FOOTER = document.getElementById('footer');
     const DELIVERYDIV = document.getElementById('delivery-div');
+    const INFOCONTAINER = document.getElementById('info-container');
 
     function hideContent() {
         WELCOMECONTAINER.classList.add('hidden');
         PRODUCTSCONTAINER.classList.add('hidden');
         MENUCONTAINER.classList.add('hidden');
         FOOTER.classList.add('hidden');
+        DELIVERYDIV.classList.remove('hidden');
+        INFOCONTAINER.classList.remove('hidden');
     }
     
     function showContent() {
@@ -24,6 +27,7 @@ const NAVIGATION = function() {
         MENUCONTAINER.classList.remove('hidden');
         FOOTER.classList.remove('hidden');
         DELIVERYDIV.classList.add('hidden');
+        INFOCONTAINER.classList.add('hidden');
     }
     
     function addEventListeners() {
@@ -37,7 +41,6 @@ const NAVIGATION = function() {
     
         delivery.addEventListener('click', () => {
             hideContent();
-            loadDelivery();
         })
     
         about.addEventListener('click', () => {

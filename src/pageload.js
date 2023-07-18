@@ -3,6 +3,7 @@
  import {content} from "./append";
  import { logoAppend } from "./append";
  import photo1 from './img/photo-1.jpg'
+ import { loadDelivery } from "./delivery";
 
  export function pageLoad() {
     createNavigationMenu();
@@ -12,6 +13,7 @@
     createMenu();
     createAppendFooter();
     createDeliveryDiv();
+    loadDelivery();
 }
 
 function displayWelcome() {

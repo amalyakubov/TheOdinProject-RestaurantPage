@@ -181,7 +181,7 @@ ol {
     justify-content: center;
 }
 
-#welcome-container.hidden, #products-display.hidden, #menu-container.hidden, #footer.hidden {
+#welcome-container.hidden, #products-display.hidden, #menu-container.hidden, #footer.hidden, #delivery-div.hidden, #info-container.hidden {
     display: none;
 }
 
