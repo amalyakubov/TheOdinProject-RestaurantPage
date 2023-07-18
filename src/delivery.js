@@ -73,7 +73,5 @@ export function loadDelivery() {
         inputContainer.appendChild(input);
         infoContainer.appendChild(contactContainer);
         content.appendChild(infoContainer);
-        div.classList.add('hidden');
     }
-    FOOTER.classList.remove('hidden');
 } 

@@ -12,8 +12,18 @@
     createStory();
     createMenu();
     createAppendFooter();
+}
+
+export function loadDel() {
     createDeliveryDiv();
     loadDelivery();
+}
+
+export function pageReload() {
+    displayWelcome();
+    addPhotoOverlay();
+    createStory();
+    createMenu();
 }
 
 function displayWelcome() {
@@ -127,7 +137,7 @@ function createMenu() {
     createMenuItemInSecondList('8. The Continental Burger - 14.5$');
 }
 
-function createAppendFooter() {
+export function createAppendFooter() {
     let footer = document.createElement('div');
     footer.id = 'footer';
     let footerElementsContanier = document.createElement('div');

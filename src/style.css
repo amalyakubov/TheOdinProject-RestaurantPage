@@ -191,3 +191,11 @@ ol {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.truth {
+
+}
+
+.truth span {
+    filter: blur(6px);
+}

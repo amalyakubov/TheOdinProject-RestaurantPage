@@ -1,33 +1,53 @@
 import './style.css'
-import { pageLoad } from './pageload';
+import { createAppendFooter, loadDel, pageLoad, pageReload } from './pageload';
 import { logoAppend } from './append';
-import { loadDelivery } from './delivery';
+import { loadAboutPage } from './truth';
 
-const NAVIGATION = function() {
+let WELCOMECONTAINER = document.getElementById('welcome-container');
+let PRODUCTSCONTAINER = document.getElementById('products-display');
+let MENUCONTAINER = document.getElementById('menu-container');
+let FOOTER = document.getElementById('footer');
+let DELIVERYDIV = document.getElementById('delivery-div');
+let INFOCONTAINER = document.getElementById('info-container');
 
-    const WELCOMECONTAINER = document.getElementById('welcome-container');
-    const PRODUCTSCONTAINER = document.getElementById('products-display');
-    const MENUCONTAINER = document.getElementById('menu-container');
-    const FOOTER = document.getElementById('footer');
-    const DELIVERYDIV = document.getElementById('delivery-div');
-    const INFOCONTAINER = document.getElementById('info-container');
-
-    function hideContent() {
-        WELCOMECONTAINER.classList.add('hidden');
-        PRODUCTSCONTAINER.classList.add('hidden');
-        MENUCONTAINER.classList.add('hidden');
-        FOOTER.classList.add('hidden');
-        DELIVERYDIV.classList.remove('hidden');
-        INFOCONTAINER.classList.remove('hidden');
+    function refreshVariables() {
+     WELCOMECONTAINER = document.getElementById('welcome-container');
+     PRODUCTSCONTAINER = document.getElementById('products-display');
+     MENUCONTAINER = document.getElementById('menu-container');
+     FOOTER = document.getElementById('footer');
+     DELIVERYDIV = document.getElementById('delivery-div');
+     INFOCONTAINER = document.getElementById('info-container');
     }
-    
-    function showContent() {
-        WELCOMECONTAINER.classList.remove('hidden');
-        PRODUCTSCONTAINER.classList.remove('hidden');
-        MENUCONTAINER.classList.remove('hidden');
-        FOOTER.classList.remove('hidden');
-        DELIVERYDIV.classList.add('hidden');
-        INFOCONTAINER.classList.add('hidden');
+
+    function deleteDelivery() {
+        if (document.getElementById('delivery-div') && document.getElementById('info-container')) {
+        document.getElementById('delivery-div').remove();
+        document.getElementById('info-container').remove();
+        }
+    }
+
+    function deleteContent() {
+        WELCOMECONTAINER.remove();
+        PRODUCTSCONTAINER.remove();
+        MENUCONTAINER.remove();
+    }
+
+    function deleteFooter() {
+        FOOTER.remove();
+    }
+
+    function resetNavBarStyle () {
+    const NAIVGATION = document.getElementById('navigation-container');
+    NAIVGATION.style.backgroundColor = 'white';
+    NAIVGATION.style.color = 'black';
+    NAIVGATION.style.margin = '20px';
+    }
+
+    function wipeTruth() {
+        const TRUTH = document.getElementById('truth-container');
+        if (TRUTH) {
+        TRUTH.remove();
+        }
     }
     
     function addEventListeners() {
@@ -36,20 +56,69 @@ const NAVIGATION = function() {
         let about = document.getElementById('about');
     
         home.addEventListener('click', () => {
-            showContent();
+            wipeTruth();
+            deleteDelivery();
+            deleteContent();
+            pageReload();
+
+            if (document.getElementById('footer') === null) {
+                createAppendFooter();
+            }
+
+            refreshVariables();
+            deleteEventListeners();
+            resetNavBarStyle();
         })
     
         delivery.addEventListener('click', () => {
-            hideContent();
+            wipeTruth();
+            deleteContent();
+            loadDel();
+            resetNavBarStyle();
         })
     
         about.addEventListener('click', () => {
-            hideContent();
+            deleteContent();
+            deleteDelivery();
+            deleteFooter();
+            loadAboutPage();
+        })
+    }
+    function deleteEventListeners() {
+        let home = document.getElementById('home');
+        let delivery = document.getElementById('delivery');
+        let about = document.getElementById('about');
+
+        home.removeEventListener('click', () => {
+            wipeTruth();
+            deleteDelivery();
+            deleteContent();
+            pageReload();
+
+            if (document.getElementById('footer') === null) {
+                createAppendFooter();
+            }
+
+            refreshVariables();
+            deleteEventListeners();
+            resetNavBarStyle();
         })
 
+        delivery.removeEventListener('click', () => {
+            wipeTruth();
+            deleteContent();
+            loadDel();
+            resetNavBarStyle();
+        })
+
+        about.removeEventListener('click', () => {
+            deleteContent();
+            deleteDelivery();
+            deleteFooter();
+            loadAboutPage();
+        })
     }
-    addEventListeners();
- };
 
 pageLoad();
-NAVIGATION();
+refreshVariables();
+addEventListeners();
